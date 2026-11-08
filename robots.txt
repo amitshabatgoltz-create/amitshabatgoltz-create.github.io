@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://amitshabatgoltz-create.github.io/sitemap.xml
+Sitemap: https://amitshabatgoltz-create.github.io/my-notebooks/sitemap.xml
