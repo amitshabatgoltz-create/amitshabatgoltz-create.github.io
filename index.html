@@ -2,20 +2,99 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>המחברות שלי – מחברות, יומן ועוזר AI לתלמידים</title>
-<script>location.replace('/my-notebooks/' + location.search + location.hash);</script>
 <meta name="description" content="המחברות שלי (My Notebooks): אתר חינמי לתלמידים – מחברות לכל מקצוע, צילום לוח לטקסט, יומן מבחנים ושיעורי בית ועוזר לימודי עם AI.">
+<link rel="canonical" href="https://amitshabatgoltz-create.github.io/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="application-name" content="המחברות שלי">
+<meta name="theme-color" content="#4F4DD6">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="המחברות שלי">
+<meta property="og:title" content="המחברות שלי – מחברות, יומן ועוזר AI לתלמידים">
+<meta property="og:description" content="מחברות לכל מקצוע, צילום לוח לטקסט, יומן מבחנים ועוזר לימודי עם AI. בחינם.">
+<meta property="og:url" content="https://amitshabatgoltz-create.github.io/">
+<meta property="og:image" content="https://amitshabatgoltz-create.github.io/icon-512.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"המחברות שלי","alternateName":["My Notebooks"],"url":"https://amitshabatgoltz-create.github.io/"}</script>
-<style>html,body{margin:0;background:#F5F5FA}@media (prefers-color-scheme:dark){html,body{background:#0E0E12}}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F5FA;--surface:#fff;--ink:#1D1D1F;--muted:#6E6E78;--line:#E7E7EE;--accent:#5E5CE6}
+@media (prefers-color-scheme:dark){:root{--bg:#0E0E12;--surface:#18181E;--ink:#F2F2F6;--muted:#9A9AA6;--line:#2A2A33;--accent:#8F8DF5}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Rubik,system-ui,sans-serif}
+.wrap{min-height:100vh;min-height:100dvh;display:grid;grid-template-columns:minmax(420px,1fr) 1.15fr}
+.side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 28px;text-align:center}
+.logo{width:76px;height:76px;border-radius:22px;box-shadow:0 18px 36px -16px #5E5CE6;margin-bottom:20px}
+h1{margin:0 0 8px;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+.sub{margin:0 0 28px;max-width:360px;font-size:17px;line-height:1.55;color:var(--muted)}
+.go{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:260px;height:54px;padding:0 30px;border-radius:14px;background:var(--accent);color:#fff;text-decoration:none;font-size:18px;font-weight:700;box-shadow:0 14px 30px -14px var(--accent);transition:transform .15s,filter .15s}
+.go:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.go svg{width:20px;height:20px;transform:scaleX(-1)}
+.free{margin:16px 0 0;font-size:13.5px;color:var(--muted)}
+.hero{position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:44px;padding:56px 64px;
+  background:radial-gradient(120% 90% at 85% 10%,#7B79F2 0%,transparent 55%),radial-gradient(90% 80% at 10% 100%,#E5579A 0%,transparent 55%),#4F4DD6}
+.hero h2{margin:0;font-size:clamp(32px,3.2vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.02em;max-width:560px;margin-inline:auto;width:100%}
+.hero p{margin:14px auto 0;max-width:560px;width:100%;font-size:18px;line-height:1.55;opacity:.88}
+.shot{position:relative;width:min(540px,88%);margin-inline:auto;transform:perspective(1400px) rotateY(10deg) rotateX(4deg) rotate(-1.5deg)}
+.win{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(10,10,40,.55),0 0 0 1px rgba(255,255,255,.4)}
+.bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:#F3F3F7;border-bottom:1px solid #E7E7EE}
+.bar span{width:10px;height:10px;border-radius:50%;background:#D9D9E3}
+.bar b{margin-inline-start:auto;font-size:12px;font-weight:600;color:#8A8A96}
+.page{padding:22px 26px 28px;color:#1D1D1F}
+.band{width:46px;height:5px;border-radius:5px;background:#10B981;margin-bottom:12px}
+.h{font-size:22px;font-weight:800;margin-bottom:12px}
+.s{font-size:15px;font-weight:700;margin:14px 0 8px}
+.lines{display:grid;gap:8px}.lines i{display:block;height:8px;border-radius:8px;background:#E6E6EE}
+.mark{margin:12px 0;padding:8px 12px;border-radius:10px;background:#FFF4B8;font-size:13px;font-weight:600;color:#6B5600}
+.float{position:absolute;background:#fff;color:#1D1D1F;border-radius:16px;padding:12px 14px;box-shadow:0 22px 44px -18px rgba(10,10,40,.5);display:grid;gap:3px;font-size:13px;animation:fl 6s ease-in-out infinite}
+.float small{font-size:11.5px;color:#8A8A96;font-weight:600}.float b{font-size:15px}.float span{color:#55555F;line-height:1.45}
+.cal{top:-22px;left:-34px;border-inline-start:4px solid #E5484D;min-width:170px}
+.chat{bottom:-30px;right:-26px;max-width:260px;border:1px solid #E7E7EE;animation-delay:-3s}.chat small{color:#5E5CE6}
+@keyframes fl{50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.float{animation:none}}
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .side{padding:48px 20px 36px}
+  .hero{padding:40px 22px 64px;gap:34px}
+  .hero h2{font-size:30px}.hero p{font-size:16px}
+  .shot{width:92%;transform:rotate(-1.5deg)}
+  .cal{left:-6px;top:-26px}.chat{right:-6px;bottom:-36px}
+}
+</style>
 </head>
 <body>
-<noscript><a href="/my-notebooks/">המחברות שלי – כניסה לאתר</a></noscript>
+<div class="wrap">
+  <main class="side">
+    <img class="logo" src="/icon-192.png" alt="הסמל של המחברות שלי" width="76" height="76">
+    <h1>המחברות שלי</h1>
+    <p class="sub">המחברות, היומן והעוזר הלימודי שלך – בכל מחשב ובכל טלפון.</p>
+    <a class="go" href="/my-notebooks/">כניסה לאתר<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="free">בחינם לתלמידים · הכול נשמר בענן</p>
+  </main>
+  <section class="hero" aria-hidden="true">
+    <div><h2>כל הלימודים שלך.<br>במקום אחד.</h2><p>מחברות לכל מקצוע, צילום לוח שהופך לטקסט, יומן מבחנים ועוזר לימודי עם AI.</p></div>
+    <div class="shot">
+      <div class="win">
+        <div class="bar"><span></span><span></span><span></span><b>המחברות שלי</b></div>
+        <div class="page">
+          <div class="band"></div><div class="h">ביולוגיה – התא</div>
+          <div class="lines"><i style="width:92%"></i><i style="width:78%"></i><i style="width:85%"></i></div>
+          <div class="s">מבנה התא</div>
+          <div class="lines"><i style="width:88%"></i><i style="width:64%"></i><i style="width:80%"></i></div>
+          <div class="mark">הגדרה: התא הוא היחידה הבסיסית של החיים</div>
+          <div class="lines"><i style="width:90%"></i><i style="width:70%"></i></div>
+        </div>
+      </div>
+      <div class="float cal"><small>יום רביעי</small><b>מבחן בביולוגיה</b><span>תוכנית למידה מוכנה</span></div>
+      <div class="float chat"><small>העוזר הלימודי</small><span>המיטוכונדריה היא "תחנת הכוח" של התא – היא מייצרת אנרגיה.</span></div>
+    </div>
+  </section>
+</div>
 </body>
 </html>
